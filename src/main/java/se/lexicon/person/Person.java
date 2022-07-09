@@ -7,14 +7,14 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
-    private static int unicId = 1;
+//    private static int unicId = 1;
 
     public Person(int id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.id = unicId ++;
+//        this.id = unicId ++;
     }
 
     public int getId() {

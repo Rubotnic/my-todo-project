@@ -10,12 +10,12 @@ public class TodoItemTask {
     private Person assignee;
     private static int unicId = 1;
 
-    public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assigne) {
+    public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assignee) {
         this.id = id;
         this.assigned = assigned;
         this.todoItem = todoItem;
         this.assignee = assignee;
-        this.id = unicId ++;
+                this.id = unicId ++;
     }
 
 
@@ -30,6 +30,7 @@ public class TodoItemTask {
             return false;
         }
     }
+
 
     public void setAssigned(boolean assigned) {
         this.assigned = assigned;
@@ -52,7 +53,8 @@ public class TodoItemTask {
     }
 
     public String getSummery() {
-        return "id" + id + ", assigned:" + assigned + " TodoItem " + todoItem + ", assignee" + getAssignee();
+        return "id" + id + ", assigned:" + assigned + " TodoItem " + todoItem + ", assignee" + assignee;
+
     }
 
     @Override

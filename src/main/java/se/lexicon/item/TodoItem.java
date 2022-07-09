@@ -6,12 +6,12 @@ import java.time.LocalDate;
 public class TodoItem {
 
         private int id;
-        private String title;
-        private String taskDescription;
-        private LocalDate deadline;
-        private Boolean done;
-        private Person creator;
-        private static int unicId = 1;
+        String title;
+        String taskDescription;
+        LocalDate deadline;
+        Boolean done;
+        Person creator;
+//        private static int unicId = 1;
 
         public TodoItem(int id, String title, String taskDescription, LocalDate deadline, Boolean done, Person creator) {
                 this.id = id;
@@ -20,7 +20,7 @@ public class TodoItem {
                 this.deadline = deadline;
                 this.done = done;
                 this.creator = creator;
-                this.id = unicId ++;
+//                this.id = unicId ++;
         }
 
 
@@ -53,12 +53,12 @@ public class TodoItem {
                 this.deadline = deadline;
         }
 
-        public Boolean isDone() {
-                return done;
-        }
-
         public void setDone(Boolean done) {
                 this.done = done;
+        }
+
+        public Boolean isDone() {
+                return done;
         }
 
         public Person getCreator(String summery) {
@@ -70,16 +70,18 @@ public class TodoItem {
         }
 
         public boolean isOverdue(boolean b) {
-                if (this.deadline.isAfter(LocalDate.parse("2022-07-07"))) {
-                        return true;
-                } else {
-                        return false;
-                }
+                return !deadline.isBefore(LocalDate.now());
+//        }
+//                if (this.deadline.isAfter(LocalDate.now())) {
+//                        return true;
+//                } else {
+//                        return false;
+//                }
         }
 
         public String getSummery() {
                 return "id:" + id + ", title:" + title + " Taskdescription " + taskDescription + ", Deadline:" + deadline + ", Done:" + done + ", Creator";
-}
+        }
 
         @Override
         public String toString() {
