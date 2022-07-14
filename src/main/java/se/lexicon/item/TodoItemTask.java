@@ -1,21 +1,22 @@
 package se.lexicon.item;
 
 import se.lexicon.person.Person;
+import java.util.Objects;
 
 public class TodoItemTask {
 
     private int id;
-    private boolean assigned;
-    private TodoItem todoItem;
+    boolean assigned;
+    TodoItem todoItem;
     private Person assignee;
-    private static int unicId = 1;
+//    private static int unicId = 1;
 
     public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assignee) {
         this.id = id;
         this.assigned = assigned;
         this.todoItem = todoItem;
         this.assignee = assignee;
-                this.id = unicId ++;
+//                this.id = unicId ++;
     }
 
 
@@ -30,7 +31,6 @@ public class TodoItemTask {
             return false;
         }
     }
-
 
     public void setAssigned(boolean assigned) {
         this.assigned = assigned;
@@ -52,11 +52,6 @@ public class TodoItemTask {
         this.assignee = assignee;
     }
 
-    public String getSummery() {
-        return "id" + id + ", assigned:" + assigned + " TodoItem " + todoItem + ", assignee" + assignee;
-
-    }
-
     @Override
     public String toString() {
         return "TodoItemTask{" +
@@ -65,5 +60,18 @@ public class TodoItemTask {
                 ", todoItem=" + todoItem +
                 ", assignee=" + assignee +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItemTask that = (TodoItemTask) o;
+        return id == that.id && assigned == that.assigned && todoItem.equals(that.todoItem);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, assigned, todoItem);
     }
 }

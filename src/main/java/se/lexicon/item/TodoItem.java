@@ -2,6 +2,7 @@ package se.lexicon.item;
 
 import se.lexicon.person.Person;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
 
@@ -69,18 +70,9 @@ public class TodoItem {
                 this.creator = creator;
         }
 
-        public boolean isOverdue(boolean b) {
-                return !deadline.isBefore(LocalDate.now());
-//        }
-//                if (this.deadline.isAfter(LocalDate.now())) {
-//                        return true;
-//                } else {
-//                        return false;
-//                }
-        }
+        public boolean isOverdue() {
+                return deadline.isBefore(LocalDate.parse("2022-12-12"));
 
-        public String getSummery() {
-                return "id:" + id + ", title:" + title + " Taskdescription " + taskDescription + ", Deadline:" + deadline + ", Done:" + done + ", Creator";
         }
 
         @Override
@@ -93,5 +85,18 @@ public class TodoItem {
                         ", done=" + done +
                         ", creator=" + creator +
                         '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                TodoItem todoItem = (TodoItem) o;
+                return id == todoItem.id && title.equals(todoItem.title) && taskDescription.equals(todoItem.taskDescription) && deadline.equals(todoItem.deadline) && done.equals(todoItem.done);
+        }
+
+        @Override
+        public int hashCode() {
+                return Objects.hash(id, title, taskDescription, deadline, done);
         }
 }
