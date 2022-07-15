@@ -71,9 +71,17 @@ public class TodoItem {
         }
 
         public boolean isOverdue() {
-                return deadline.isBefore(LocalDate.parse("2022-12-12"));
-
+                if (this.deadline.isBefore(LocalDate.parse("2022-12-12"))) {
+                        System.out.println("Yes! Continue!");
+                        if(this.deadline.isEqual(LocalDate.parse("2022-12-12"))) {
+                                System.out.println("Yes, Continue!");
+                        }
+                } else {
+                        System.out.println("No! Stop.");
+                }
+                return true;
         }
+
 
         @Override
         public String toString() {
