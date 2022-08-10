@@ -4,7 +4,7 @@ public class TodoItemTaskIdSequencer {
 
     private static int currentId;
 
-    public static int nestId;
+    public static int nextId;
 
     public static int getCurrentId;
 
