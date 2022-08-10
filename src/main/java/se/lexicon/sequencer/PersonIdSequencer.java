@@ -5,13 +5,13 @@ public class PersonIdSequencer {
     private static int currentId;
 
     public static int nextId() {
-        return PersonIdSequencer.currentId += 1;
+        return ++currentId;
     }
     public static int getCurrentId() {
-        return PersonIdSequencer.currentId;
+        return currentId;
     }
-    public static void setCurrentId(int id){
-        PersonIdSequencer.currentId = id;
+    public static void setCurrentId(int currentId){
+        PersonIdSequencer.currentId = currentId;
     }
 
 }

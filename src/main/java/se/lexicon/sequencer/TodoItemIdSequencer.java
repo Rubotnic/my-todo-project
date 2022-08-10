@@ -5,11 +5,10 @@ public class TodoItemIdSequencer {
     private static int currentId;
 
     public static int nextId(){
-        return TodoItemIdSequencer.currentId += 1;
+        return ++currentId;
     }
-
     public static int getCurrentId(){
-        return TodoItemIdSequencer.currentId;
+        return currentId;
     }
 
     public static void setCurrentId(int currentId){
