@@ -1,14 +1,12 @@
-package se.lexicon.item;
-
-import sun.invoke.empty.Empty;
+package se.lexicon.model;
 
 import java.util.Objects;
 
 public class AppUser {
 
-    private String username = "Empty";
-    private String password = "Empty";
-    private AppRole role = AppRole.ROLE_APP_ADMIN;
+    private String username;
+    private String password;
+    private AppRole role = AppRole.ROLE_APP_USER;
 
 
     public AppUser(String username, String password, AppRole role) {
@@ -43,15 +41,6 @@ public class AppUser {
 
 
     @Override
-    public String toString() {
-        return "AppUser{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -63,8 +52,12 @@ public class AppUser {
     public int hashCode() {
         return Objects.hash(username, role);
     }
+
+    @Override
+    public String toString() {
+        return "AppUser{" +
+                "username='" + username + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }
-
-
-
-

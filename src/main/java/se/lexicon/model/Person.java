@@ -1,16 +1,13 @@
-package se.lexicon.person;
+package se.lexicon.model;
 
-import se.lexicon.item.AppUser;
 import java.util.Objects;
 
 public class Person {
 
-
-    private int id;
+    private final int id;
     private String firstName;
     private String lastName;
     private String email;
-//    private static int unicId = 1;
     private AppUser credentials;
 
     public Person(int id, String firstName, String lastName, String email) {
@@ -24,8 +21,7 @@ public class Person {
 
 
     public int getId() {
-        this.id = id;
-        return 0;
+        return id;
     }
 
     public String getFirstName() {

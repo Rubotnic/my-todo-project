@@ -1,18 +1,17 @@
-package se.lexicon.item;
+package se.lexicon.model;
 
-import se.lexicon.person.Person;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class TodoItem {
 
         private int id;
-        String title;
-        String taskDescription;
-        LocalDate deadline;
-        Boolean done;
-        Person creator;
-//        private static int unicId = 1;
+        private String title;
+        private String taskDescription;
+        private LocalDate deadline;
+        private Boolean done;
+        private Person creator;
+
 
         public TodoItem(int id, String title, String taskDescription, LocalDate deadline, Boolean done, Person creator) {
                 this.id = id;
@@ -99,7 +98,6 @@ public class TodoItem {
                         ", taskDescription='" + taskDescription + '\'' +
                         ", deadline=" + deadline +
                         ", done=" + done +
-                        ", creator=" + creator +
                         '}';
         }
 

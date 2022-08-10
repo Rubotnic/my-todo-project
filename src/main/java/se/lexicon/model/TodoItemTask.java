@@ -1,13 +1,12 @@
-package se.lexicon.item;
+package se.lexicon.model;
 
-import se.lexicon.person.Person;
 import java.util.Objects;
 
 public class TodoItemTask {
 
-    private int id;
-    boolean assigned;
-    TodoItem todoItem;
+    private final int id;
+    private boolean assigned;
+    private TodoItem todoItem;
     private Person assignee;
 //    private static int unicId = 1;
 
